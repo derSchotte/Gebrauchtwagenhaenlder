@@ -11,7 +11,7 @@ namespace Gebrauchtwagenhaenlder
             Console.Write( "Eingabe: " );
             eingabe = int.Parse(Console.ReadLine());
             Console.WriteLine();
-            Rechnung.rechnungen[ eingabe ].Ausgabe();
+            Rechnung.rechnungen[ eingabe - 1 ].Ausgabe();
         }
     }
 }

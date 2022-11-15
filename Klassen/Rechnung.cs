@@ -18,20 +18,20 @@
         Auto auto;
         DateOnly datum;
         decimal preis;
-        int anzahlRechnungen;
+        int rechnungsNummer;
 
         public static List<Rechnung> rechnungen = new List<Rechnung> {
             new( new( "Peter", "Lustig", "Musterstraße", "84/2", 12345, "Musterstadt", "peter.lustig@lachen.de" ),
                     new( "Sunzuka", "p1-200", 24, "Neuwagen, Klima, ABS, ESP, Sitzheizung", new( 2022, 01, 01 ) ),
-                    new( 2022, 11, 15 ), 89.999m, 1 ),
+                    new( 2022, 11, 15 ), 89999m, 1 ),
 
             new(new("Steffie", "Traurig", "Raufboldstraße", "2b", 34543, "Spasshausen", "s.traurig@web.de"),
                     new("BSW","K4", 283943,"Alter Mistwagen, Klappert, Unfälle mit ner Kuh, Klima ja, aber geht nicht",new(1888,05,05)),
                     new(2020,04,01),24.95m,2),
 
             new(new("Fritz", "Kind", "Dorfweg", "69", 39874, "Dorfingen", "fritz.kind@eigenbau.de"),
-                    new("BSW","K4", 283943,"Alter Mistwagen, Klappert, Unfälle mit ner Kuh, Klima ja, aber geht nicht",new(2002,03,15)),
-                    new(2020,04,01),24.95m,3),
+                    new("SauWee","Fols", 283943,"Alter Mistwagen, Klappert, Unfälle mit ner Kuh, Klima ja, aber geht nicht",new(2002,03,15)),
+                    new(2020,04,01),2500m,3),
 
             new(new("Hans", "Müller", "Werner-Bolding-straße", "125/5", 67543, "Niederburg", ""),
                     new("Lamporgani","cloud", 2834,"Bisl gefahren, aber dafür schnell, klappert etwas am ende",new(2001,08,15)),
@@ -43,23 +43,23 @@
         };
 
 
-        public Rechnung(Kunde kunde, Auto auto, DateOnly datum, decimal preis, int anzahlRechnungen)
+        public Rechnung(Kunde kunde, Auto auto, DateOnly datum, decimal preis, int rechnungsNummer)
         {
             this.kunde = kunde;
             this.auto = auto;
             this.datum = datum;
             this.preis = preis;
-            this.anzahlRechnungen = anzahlRechnungen;
+            this.rechnungsNummer = rechnungsNummer;
         }
 
         public void Ausgabe()
         {
+            Console.WriteLine($"RechnungsNr:\t{rechnungsNummer}");
             kunde.Ausgabe();
             Console.WriteLine();
             auto.Ausgabe();
             Console.WriteLine($"\nDatum:\t\t{datum}\n" +
-                $"Preis:\t\t{preis}\n");// +
-                                        //$"Rechnungen:\t{anzahlRechnungen}" );
+                $"Preis:\t\t{preis} EUR\n");
         }
     }
 }
