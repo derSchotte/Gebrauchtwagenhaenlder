@@ -1,4 +1,5 @@
-﻿namespace Gebrauchtwagenhaenlder {
+﻿namespace Gebrauchtwagenhaenlder.Klassen
+{
     //3)
     // Entwicklen Sie eine Klasse "Rechnung" mit folgenden
     // Informationen:
@@ -11,7 +12,8 @@
     // Erstellen Sie eine Methode "Ausgabe", welche alle
     // Informationen der Klasse "Rechnung" ausgibt.
 
-    internal class Rechnung {
+    internal class Rechnung
+    {
         Kunde kunde;
         Auto auto;
         DateOnly datum;
@@ -41,7 +43,8 @@
         };
 
 
-        public Rechnung( Kunde kunde, Auto auto, DateOnly datum, decimal preis, int anzahlRechnungen ) {
+        public Rechnung(Kunde kunde, Auto auto, DateOnly datum, decimal preis, int anzahlRechnungen)
+        {
             this.kunde = kunde;
             this.auto = auto;
             this.datum = datum;
@@ -49,13 +52,14 @@
             this.anzahlRechnungen = anzahlRechnungen;
         }
 
-        public void Ausgabe() {
+        public void Ausgabe()
+        {
             kunde.Ausgabe();
             Console.WriteLine();
             auto.Ausgabe();
-            Console.WriteLine( $"\nDatum:\t\t{datum}\n" +
-                $"Preis:\t\t{preis}\n" );// +
-                //$"Rechnungen:\t{anzahlRechnungen}" );
+            Console.WriteLine($"\nDatum:\t\t{datum}\n" +
+                $"Preis:\t\t{preis}\n");// +
+                                        //$"Rechnungen:\t{anzahlRechnungen}" );
         }
     }
 }

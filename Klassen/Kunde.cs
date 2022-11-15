@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 
-namespace Gebrauchtwagenhaenlder {
+namespace Gebrauchtwagenhaenlder.Klassen
+{
     // 1)
     // Entwickeln Sie eine Klasse "Kunde" mit folgenden
     // Informationen:
@@ -10,7 +11,8 @@ namespace Gebrauchtwagenhaenlder {
     // Erstellen Sie eine Methode "Ausgabe", welche alle
     // Informationen der Klasse "Kunde" ausgibt.
 
-    internal class Kunde {
+    internal class Kunde
+    {
         string vorname;
         string nachname;
         string strassenName;
@@ -19,7 +21,8 @@ namespace Gebrauchtwagenhaenlder {
         string ort;
         string email;
 
-        public Kunde( string vorname, string nachname, string strassenName, string hausNummer, int plz, string ort, string email ) {
+        public Kunde(string vorname, string nachname, string strassenName, string hausNummer, int plz, string ort, string email)
+        {
             this.vorname = vorname;
             this.nachname = nachname;
             this.strassenName = strassenName;
@@ -29,7 +32,8 @@ namespace Gebrauchtwagenhaenlder {
             this.email = email;
         }
 
-        public void Ausgabe() {
+        public void Ausgabe()
+        {
             Console.WriteLine($"Vorname:\t{vorname} {nachname}\n" +
                 $"Anschrift:\t{strassenName} {hausNummer}\n" +
                 $"\t\t{plz} {ort}\n" +

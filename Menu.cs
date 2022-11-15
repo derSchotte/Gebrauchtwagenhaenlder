@@ -1,4 +1,7 @@
-﻿namespace Gebrauchtwagenhaenlder {
+﻿using Gebrauchtwagenhaenlder.Klassen;
+
+namespace Gebrauchtwagenhaenlder
+{
     internal static class Menu {
         public static void MainMenu() {
             int eingabe;
