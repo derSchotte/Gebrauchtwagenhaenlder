@@ -19,37 +19,37 @@
         DateOnly datum;
         decimal preis;
         int rechnungsNummer;
+        static int anzahlRechnungen = 0;
 
         public static List<Rechnung> rechnungen = new List<Rechnung> {
             new( new( "Peter", "Lustig", "Musterstraße", "84/2", 12345, "Musterstadt", "peter.lustig@lachen.de" ),
                     new( "Sunzuka", "p1-200", 24, "Neuwagen, Klima, ABS, ESP, Sitzheizung", new( 2022, 01, 01 ) ),
-                    new( 2022, 11, 15 ), 89999m, 1 ),
+                    new( 2022, 11, 15 ), 89999m),
 
             new(new("Steffie", "Traurig", "Raufboldstraße", "2b", 34543, "Spasshausen", "s.traurig@web.de"),
                     new("BSW","K4", 283943,"Alter Mistwagen, Klappert, Unfälle mit ner Kuh, Klima ja, aber geht nicht",new(1888,05,05)),
-                    new(2020,04,01),24.95m,2),
+                    new(2020,04,01),24.95m),
 
             new(new("Fritz", "Kind", "Dorfweg", "69", 39874, "Dorfingen", "fritz.kind@eigenbau.de"),
                     new("SauWee","Fols", 283943,"Alter Mistwagen, Klappert, Unfälle mit ner Kuh, Klima ja, aber geht nicht",new(2002,03,15)),
-                    new(2020,04,01),2500m,3),
+                    new(2020,04,01),2500m),
 
             new(new("Hans", "Müller", "Werner-Bolding-straße", "125/5", 67543, "Niederburg", ""),
                     new("Lamporgani","cloud", 2834,"Bisl gefahren, aber dafür schnell, klappert etwas am ende",new(2001,08,15)),
-                    new(2021,02,11),244500.95m,4),
+                    new(2021,02,11),244500.95m),
 
             new(new("Claudia", "Falte", "Egg-Street", "222b", 12392, "Filten", "c.falte@fast-cleaner.de"),
                     new("Ausi","A100", 24,"Neuwagen, Klima, ABS, ESP, Sitzheizung, Selbstfahrend, KI gesteuert",new(2020,09,24)),
-                    new(2022,07,11),84456.95m,5),
+                    new(2022,07,11),84456.95m),
         };
 
-
-        public Rechnung(Kunde kunde, Auto auto, DateOnly datum, decimal preis, int rechnungsNummer)
+        public Rechnung(Kunde kunde, Auto auto, DateOnly datum, decimal preis)
         {
             this.kunde = kunde;
             this.auto = auto;
             this.datum = datum;
             this.preis = preis;
-            this.rechnungsNummer = rechnungsNummer;
+            rechnungsNummer = ++anzahlRechnungen;
         }
 
         public void Ausgabe()
