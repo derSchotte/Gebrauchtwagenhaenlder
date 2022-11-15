@@ -54,8 +54,8 @@
             Console.WriteLine();
             auto.Ausgabe();
             Console.WriteLine( $"\nDatum:\t\t{datum}\n" +
-                $"Preis:\t\t{preis}\n" +
-                $"Rechnungen:\t{anzahlRechnungen}" );
+                $"Preis:\t\t{preis}\n" );// +
+                //$"Rechnungen:\t{anzahlRechnungen}" );
         }
     }
 }

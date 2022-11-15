@@ -4,11 +4,11 @@
             int eingabe;
 
             Console.WriteLine("Welche Rechnung wollen sie sich anschauen?");
-            Console.WriteLine($"[1] - [{Rechnung.rechnungen.Count()}]");
+            Console.WriteLine($"RechnungNr: [1] - [{Rechnung.rechnungen.Count()}]");
+            Console.Write( "Eingabe: " );
             eingabe = int.Parse(Console.ReadLine());
             Console.WriteLine();
             Rechnung.rechnungen[ eingabe ].Ausgabe();
-            ;
         }
     }
 }
